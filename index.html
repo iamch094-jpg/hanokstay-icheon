@@ -79,15 +79,15 @@
   .topbar .brand{ font-family:'Noto Serif KR', serif; font-size:18px; letter-spacing:0.04em; font-weight:600; }
 
   /* Hero */
-  header.hero{ position:relative; min-height:88vh; color:#fff; display:flex; align-items:flex-end; overflow:hidden; }
+  header.hero{ position:relative; min-height:clamp(620px, 82vh, 800px); color:#fff; display:flex; align-items:flex-end; overflow:hidden; }
   header.hero .bg{ position:absolute; inset:0; }
   header.hero .bg .slide{ position:absolute; inset:0; opacity:0; transition:opacity 1.6s ease; }
   header.hero .bg .slide.active{ opacity:1; }
   header.hero .bg::after{
     content:''; position:absolute; inset:0; z-index:1;
-    background:linear-gradient(180deg, rgba(43,43,40,0.15) 0%, rgba(30,28,24,0.82) 100%);
+    background:linear-gradient(90deg, rgba(24,22,18,0.46) 0%, rgba(24,22,18,0.12) 68%), linear-gradient(180deg, rgba(43,43,40,0.08) 0%, rgba(30,28,24,0.84) 100%);
   }
-  header.hero .content{ position:relative; z-index:2; padding:0 40px 56px; width:100%; }
+  header.hero .content{ position:relative; z-index:2; padding:0 32px clamp(56px, 7vw, 88px); width:100%; }
   .eyebrow{ font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#E7C87D; margin-bottom:18px; }
   header.hero h1{ font-size:52px; font-weight:700; line-height:1.25; }
   header.hero p.lead{ margin-top:18px; font-size:16.5px; color:rgba(255,255,255,0.88); max-width:460px; font-weight:300; }
@@ -190,8 +190,8 @@
     .banner-card.size-large{ width:calc(100vw - 28px); }
     .wrap{ padding:0 20px; }
     .topbar{ padding:20px; }
-    header.hero{ min-height:78svh; }
-    header.hero .content{ padding:0 20px 38px; }
+    header.hero{ min-height:72svh; }
+    header.hero .content{ padding:0 20px 46px; }
     header.hero h1{ font-size:34px; }
     header.hero p.lead{ font-size:15px; }
     .cta-row{ margin-top:28px; gap:10px; }
@@ -224,9 +224,9 @@
 
 <header class="hero">
   <div class="bg" id="hero-bg">
-    <div class="slide active"><img src="images/hero.jpg" alt="한옥스테이 더 이천 전경"></div>
-    <div class="slide"><img src="images/exterior-feature.jpg" alt="한옥 마당 전경"></div>
-    <div class="slide"><img src="images/space-1.jpg" alt="한옥 야경"></div>
+    <div class="slide active"><img src="images/hero-main.jpg" alt="한옥스테이 더 이천 야경"></div>
+    <div class="slide"><img src="images/hero-lounge.jpg" alt="한옥 라운지 전경"></div>
+    <div class="slide"><img src="images/hero-courtyard.jpg" alt="한옥 마당 전경"></div>
   </div>
   <div class="content wrap">
     <div class="eyebrow">경기 이천 · 프라이빗 한옥 독채</div>
