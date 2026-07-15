@@ -6,7 +6,7 @@ window.HANOK_BANNERS = [
     "size": "large",
     "icon": "🏡",
     "image": "images/banner-event.jpg",
-    "title": "한옥스테이 2026년 6월 오픈🏡",
+    "title": "한옥스테이 더 이천 2026년 6월 OPEN!🏡",
     "message": "고즈넉한 한옥에서 만나는 온전한 쉼",
     "buttonEnabled": true,
     "buttonText": "예약 문의하기",
@@ -14,13 +14,13 @@ window.HANOK_BANNERS = [
   },
   {
     "id": "pool",
-    "enabled": true,
+    "enabled": false,
     "size": "medium",
     "icon": "",
     "image": "images/banner-pool.jpg",
     "title": "수영장 오픈🎉",
     "message": "한옥에서 즐기는 여유로운 물놀이🏊",
-    "buttonEnabled": true,
+    "buttonEnabled": false,
     "buttonText": "자세히 보기",
     "link": "#gallery"
   },
@@ -32,6 +32,18 @@ window.HANOK_BANNERS = [
     "image": "images/hero-main.jpg",
     "title": "☎️예약문의 전화",
     "message": "📞010-6676-7732",
+    "buttonEnabled": false,
+    "buttonText": "자세히 보기",
+    "link": "#booking"
+  },
+  {
+    "id": "banner-1784122552594",
+    "enabled": true,
+    "size": "medium",
+    "icon": "🍖",
+    "image": "images/banner-bbq.jpg",
+    "title": "야외 바베큐 오픈",
+    "message": "감성가득 한옥 배경으로 야외 바베큐를 즐겨보세요 🍖",
     "buttonEnabled": false,
     "buttonText": "자세히 보기",
     "link": "#booking"
