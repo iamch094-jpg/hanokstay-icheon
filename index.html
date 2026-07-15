@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="경기 이천의 프라이빗 한옥 숙소, 한옥스테이 더 이천">
   <title>한옥스테이 더 이천</title>
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    function startFromTop(){ if (!location.hash) window.scrollTo(0, 0); }
+    startFromTop();
+    window.addEventListener('DOMContentLoaded', startFromTop);
+    window.addEventListener('pageshow', function(){ requestAnimationFrame(startFromTop); });
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
