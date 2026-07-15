@@ -1,0 +1,23 @@
+한옥스테이 더 이천 관리자 설정
+
+관리자 주소
+https://iamch094-jpg.github.io/hanokstay-icheon/admin/
+
+로그인
+아이디: iamch94
+비밀번호: 04560123
+
+GitHub 자동 저장을 처음 설정할 때
+1. https://github.com/settings/personal-access-tokens/new 에 접속합니다.
+2. Resource owner는 iamch094-jpg를 선택합니다.
+3. Repository access는 Only select repositories를 선택합니다.
+4. hanokstay-icheon 저장소만 선택합니다.
+5. Repository permissions에서 Contents를 Read and write로 설정합니다.
+6. 토큰을 만든 뒤 관리자 페이지의 GitHub 연결 칸에 입력하고 토큰 저장을 누릅니다.
+7. 배너를 수정한 뒤 GitHub에 저장하고 반영을 누릅니다.
+
+주의
+- 토큰을 채팅이나 다른 사람에게 보내지 마세요.
+- 관리자 아이디와 비밀번호는 정적 페이지 소스에 포함되는 간단한 접근 제한 방식입니다.
+- 저장 직후 현재 브라우저에는 바로 반영됩니다.
+- 전체 방문자에게는 GitHub Pages 재배포 후 반영됩니다.
