@@ -53,8 +53,8 @@
     <section class="booking" id="booking"><div class="wrap"><div class="eyebrow">RESERVATION</div><h2>한옥스테이 더 이천을<br>예약해 보세요</h2><p>예약 페이지에서 가능한 날짜와 요금을 확인하실 수 있습니다.</p><a class="button" href="https://booking.ddnayo.com/?accommodationId=106558" target="_blank" rel="noopener">예약 페이지로 이동</a></div></section>
   </main>
   <footer><div class="wrap"><strong>한옥스테이 더 이천</strong><span>경기 이천시 대포동 329 · 문의 010-6676-7732 · <a href="admin/index.html">관리자 페이지</a></span></div></footer>
-  <script src="banner-config.js"></script>
-  <script src="site-media-config.js"></script>
+  <!-- 배너·사진 설정은 항상 최신 파일을 불러와 이전 브라우저 캐시가 남지 않게 합니다. -->
+  <script>document.write('<script src="banner-config.js?v='+Date.now()+'"><\/script>');document.write('<script src="site-media-config.js?v='+Date.now()+'"><\/script>');</script>
   <script>
     const promoRow=document.getElementById('promoRow');const today=new Date().toISOString().slice(0,10);
     function renderBanners(banners){promoRow.innerHTML='';(banners||[]).forEach((banner,index)=>{const id=banner.id||String(index);const hideKey='hanokstay-promo-hide-'+id;if(!banner.enabled||localStorage.getItem(hideKey)===today)return;const promo=document.createElement('aside');promo.className='promo size-'+(banner.size||'medium');promo.innerHTML='<div class="promo-image"><img alt="행사 안내"></div><div class="promo-body"><strong></strong><p></p><a class="button primary"></a></div><div class="promo-foot"><button class="hide-today">오늘 하루 보지 않기</button><button class="close-promo">닫기</button></div>';promo.querySelector('img').src=banner.image||'images/banner-open.jpg';promo.querySelector('strong').textContent=(banner.icon?banner.icon+' ':'')+(banner.title||'한옥스테이 더 이천');promo.querySelector('p').textContent=banner.message||'';const link=promo.querySelector('a');link.textContent=banner.buttonText||'자세히 보기';link.href=banner.link||'#booking';if(!banner.buttonEnabled)link.hidden=true;promo.querySelector('.close-promo').onclick=()=>promo.remove();promo.querySelector('.hide-today').onclick=()=>{localStorage.setItem(hideKey,today);promo.remove()};promoRow.appendChild(promo)})}
