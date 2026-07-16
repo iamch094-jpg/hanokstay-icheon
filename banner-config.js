@@ -33,7 +33,7 @@ window.HANOK_BANNERS = [
     "title": "☎️예약문의 전화",
     "message": "📞010-6676-7732",
     "buttonEnabled": false,
-    "buttonText": "자세히 보기",
+    "buttonText": "",
     "link": "#booking"
   },
   {
@@ -45,7 +45,7 @@ window.HANOK_BANNERS = [
     "title": "야외 바베큐 오픈",
     "message": "감성가득 한옥 배경으로 야외 바베큐를 즐겨보세요 🍖",
     "buttonEnabled": false,
-    "buttonText": "자세히 보기",
+    "buttonText": "",
     "link": "#booking"
   }
 ];
