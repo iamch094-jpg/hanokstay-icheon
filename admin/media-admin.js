@@ -1,5 +1,5 @@
 (function(){
-  let media=(()=>{try{const saved=localStorage.getItem('hanok-live-media');if(saved)return JSON.parse(saved)}catch(e){}return JSON.parse(JSON.stringify(window.HANOK_MEDIA||{gallery:[],rooms:[]}))})();
+  let media=JSON.parse(JSON.stringify(window.HANOK_MEDIA||{gallery:[],rooms:[]}));
   if(!Array.isArray(media.gallery))media.gallery=[];if(!Array.isArray(media.rooms))media.rooms=[];
   const galleryList=document.getElementById('galleryMediaList'),roomList=document.getElementById('roomMediaList');
   const baseRender=render,baseRenderPreview=renderPreview;
@@ -32,7 +32,7 @@
   function uploadPath(type){return 'images/uploads/'+type+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,8)+'.jpg'}
   async function uploadPendingImages(token){for(const b of banners){if(b._upload){b.image=await createGitHubImage(uploadPath('banner'),b._upload,token);delete b._upload;delete b._uploadName}}for(const type of ['gallery','rooms']){for(const item of media[type]){if(item._upload){item.image=await createGitHubImage(uploadPath(type==='rooms'?'room':'gallery'),item._upload,token);delete item._upload;delete item._uploadName}}}}
   function mediaConfigText(){return '/* 관리자 페이지에서 갤러리와 객실 사진 설정을 자동으로 수정합니다. */\nwindow.HANOK_MEDIA = '+JSON.stringify(cleanMedia(),null,2)+';\n'}
-  applyLocal=function(){localStorage.setItem('hanok-live-banners',JSON.stringify(banners.map(cleanBanner)));localStorage.setItem('hanok-live-media',JSON.stringify(cleanMedia()));status.textContent='글과 기존 사진 배치는 현재 브라우저에 미리 반영했습니다.'};
+  applyLocal=function(){status.textContent='현재 관리자 화면의 미리보기 상태를 저장했습니다. 실제 홈페이지에는 GitHub 저장 후 반영됩니다.'};
   configText=function(){return '/* 한옥스테이 더 이천 배너 설정 */\nwindow.HANOK_BANNERS = '+JSON.stringify(banners.map(cleanBanner),null,2)+';\n'};
   saveToGitHub=async function(){const token=tokenInput.value.trim()||localStorage.getItem('hanok-github-token');if(!token){status.textContent='먼저 GitHub 토큰을 입력하세요.';tokenInput.focus();return}localStorage.setItem('hanok-github-token',token);const button=document.getElementById('githubSave');button.disabled=true;button.textContent='사진과 설정 저장 중...';try{status.textContent='새 사진을 GitHub에 업로드하고 있습니다.';await uploadPendingImages(token);status.textContent='배너 설정을 저장하고 있습니다.';await updateGitHubText('banner-config.js',configText(),token,'Update website banners from admin page');status.textContent='갤러리와 객실 사진 설정을 저장하고 있습니다.';await updateGitHubText('site-media-config.js',mediaConfigText(),token,'Update website gallery and room images');applyLocal();status.textContent='저장 완료! GitHub Pages 배포 후 모든 방문자에게 새 사진이 반영됩니다.';render()}catch(error){status.textContent='저장 실패: '+error.message}finally{button.disabled=false;button.textContent='GitHub에 저장하고 반영'}};
   document.getElementById('localSave').onclick=applyLocal;document.getElementById('githubSave').onclick=saveToGitHub;
